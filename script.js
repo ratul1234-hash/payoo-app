@@ -69,6 +69,11 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
 
     const add = getInputValue('add-amount')
 
+    if(add<=0){
+      alert('invalid')
+      return
+    }
+
     const pinNumber = getInputValue('add-pin')
 
    const availableBalance = getInnerText('available-balance')
@@ -111,6 +116,11 @@ document.getElementById('withdraw-btn').addEventListener('click',function(e){
    const pin = getInputValue('w-pin')
 
    const availableBalance = getInnerText('available-balance')
+
+   if(amount<=0 || amount>availableBalance){
+      alert('invalid')
+      return
+   }
 
    if(agent.length <11){
       alert('please provide valid number')
